@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
     void rollDice() {
         Random random = new Random();
         int suma = 0;
-        for(int i=0; i<rzutyKosc.length;i++)
+        for(int i=0;i<rzutyKosc.length;i++)
         {
             int rzut = random.nextInt(6)+1;
             rzutyKosc[i] = rzut;
-            suma+=rzut;
+            suma = suma + rzut;
         }
         updateScore(suma);
         updateRollCount();
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     void updateScore(int newScore) {
-        wynikGry += newScore;
+        wynikGry = wynikGry + newScore;
         wynikLosowania2.setText("Wynik tego losowania: " + String.valueOf(newScore));
         wynikGry2.setText("Wynik gry: " + String.valueOf(wynikGry));
 
